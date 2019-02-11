@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -99,3 +101,9 @@ Route::get('hello4', 'HelloController@index');
 
 // http://laravelapp.test/hello5 でアクセスしたときのルーティング
 Route::get('hello5/{id?}/{pass?}', 'HelloController@index2');
+
+// http://laravelapp.test/hello6 でアクセスしたときのルーティング
+Route::get('hello6', 'HelloController@index');
+
+// http://laravelapp.test/hello7/other でアクセスしたときのルーティング
+Route::get('hello7/other', 'HelloController@other');
