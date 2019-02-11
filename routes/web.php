@@ -107,3 +107,7 @@ Route::get('hello6', 'HelloController@index');
 
 // http://laravelapp.test/hello7/other でアクセスしたときのルーティング
 Route::get('hello7/other', 'HelloController@other');
+
+// http://laravelapp.test/hello8 でアクセスしたときのルーティング
+Route::get('hello8', 'HelloController@');
+// Route::get('hello8', 'HelloController@__invoke'); //このパターンも使用することができる
