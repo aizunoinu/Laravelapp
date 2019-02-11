@@ -42,12 +42,12 @@ $html = <<<EOF
 </html>
 EOF;
 
-// html://laravelapp.test/hello でアクセスしたときのルーティングを記載
+// http://laravelapp.test/hello でアクセスしたときのルーティングを記載
 Route::get('hello', function () use ($html) {
     return $html;    
 });
 
-// html://laravelapp.test/hello2/message でアクセスしたときのルーティングを記載
+// http://laravelapp.test/hello2/message でアクセスしたときのルーティングを記載
 Route::get('hello2/{msg}', function ($msg) {
 $html = <<<EOF
 <html>
@@ -70,7 +70,7 @@ EOF;
     return $html;
 });
 
-// html://laravelapp.test/hello3/ でアクセスしたときのルーティングを記載
+// http://laravelapp.test/hello3/ でアクセスしたときのルーティングを記載
 // パラメタをhello3に指定しなかったとき、「no message」が使用されます。
 Route::get('hello3/{msg?}', function ($msg='no message.') {
 $html = <<<EOF
@@ -93,3 +93,9 @@ EOF;
 
     return $html;
 });
+
+// http://laravelapp.test/hello4 でアクセスしたときのルーティング
+Route::get('hello4', 'HelloController@index');
+
+// http://laravelapp.test/hello5 でアクセスしたときのルーティング
+Route::get('hello5/{id?}/{pass?}', 'HelloController@index2');
